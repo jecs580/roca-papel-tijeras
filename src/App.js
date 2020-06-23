@@ -7,6 +7,7 @@ import Wrapper from "./wrapper";
 const AppStyled = styled.main`
   @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
   /* background: #111f43; */
+  font-family: "Barlow Semi Condensed", sans-serif;
   background-image: radial-gradient(
     circle at top,
     hsl(214, 47%, 23%) 40%,
@@ -15,7 +16,9 @@ const AppStyled = styled.main`
   min-height: 100vh;
   padding: 2em;
   font-weight: 700;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  /* body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+  } */
 `;
 
 function App() {
