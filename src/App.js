@@ -15,11 +15,21 @@ const AppStyled = styled.main`
     hsl(237, 49%, 15%) 100%
   );
   color: white;
-  min-height: 100vh;
-  padding: 2em;
   font-weight: 700;
-  /* body {
-    font-family: "Barlow Semi Condensed", sans-serif;
+  .app-content {
+    padding: 2em;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* span {
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid white;
+    width: 30%;
   } */
 `;
 
@@ -27,8 +37,11 @@ function App() {
   return (
     <AppStyled>
       <Wrapper>
-        <Header />
-        <Table />
+        <div className="app-content">
+          <Header />
+          <Table />
+          <span>Rules</span>
+        </div>
       </Wrapper>
     </AppStyled>
   );
