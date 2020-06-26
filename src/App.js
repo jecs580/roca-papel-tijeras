@@ -5,9 +5,9 @@ import Header from "./header";
 import styled from "styled-components";
 import Wrapper from "./wrapper";
 import Table from "./table";
+import Rules from "./rules";
 const AppStyled = styled.main`
   @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
-  /* background: #111f43; */
   font-family: "Barlow Semi Condensed", sans-serif;
   background-image: radial-gradient(
     circle at top,
@@ -40,7 +40,7 @@ function App() {
         <div className="app-content">
           <Header />
           <Table />
-          <span>Rules</span>
+          <Rules />
         </div>
       </Wrapper>
     </AppStyled>

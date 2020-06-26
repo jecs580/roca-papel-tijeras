@@ -10,6 +10,8 @@ const TableStyled = styled.div`
   border-radius: 50%;
   box-shadow: 0 10px 0 -4px ${({ color }) => color.border};
   cursor: pointer;
+  position: relative;
+  z-index: 2;
   &:active {
     transform: scale(0.9);
   }
