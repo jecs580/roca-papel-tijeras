@@ -7,7 +7,6 @@ import Wrapper from "./wrapper";
 import Table from "./table";
 import Rules from "./rules";
 const AppStyled = styled.main`
-  @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
   font-family: "Barlow Semi Condensed", sans-serif;
   background-image: radial-gradient(
     circle at top,

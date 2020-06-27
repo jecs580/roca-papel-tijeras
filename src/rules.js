@@ -33,7 +33,6 @@ function Rules() {
   const [visible, setVisible] = useState(false); //Sirve como opereador ternario
   function handleToggleClick() {
     setVisible(!visible);
-    console.log("Hola world");
   }
   return (
     <RulesStyled>

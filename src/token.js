@@ -39,9 +39,12 @@ const colors = {
     border: "#c76c14",
   },
 };
-function Token({ name }) {
+function Token({ name, onClick }) {
+  function handleClick() {
+    onClick(name);
+  }
   return (
-    <TableStyled color={colors[name]}>
+    <TableStyled color={colors[name]} onClick={handleClick}>
       <div className="box">
         <img src={`./images/icon-${name}.svg`} alt="" />
       </div>
