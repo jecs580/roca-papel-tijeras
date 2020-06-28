@@ -17,6 +17,13 @@ const TableStyled = styled.div`
   & div:nth-of-type(3) {
     grid-column: span 2; /*Especificamos que el tercer hijo ocupe dos espacios de la grilla*/
   }
+  .in-game {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
   .line {
     display: ${({ playing }) => (!playing ? "block" : "none")};
     height: 15px;
@@ -52,8 +59,8 @@ const TableStyled = styled.div`
 `;
 
 function Table() {
-  const [playing, setPlaying] = useState(false);
-  const [pick, setPick] = useState("");
+  const [playing, setPlaying] = useState(true); // cambiar a falso
+  const [pick, setPick] = useState("paper"); // Cambiar a vacio
   function onClick(name) {
     console.log(name);
     setPlaying(true);
@@ -69,16 +76,16 @@ function Table() {
           <Token name="rock" onClick={onClick} />
         </>
       ) : (
-        <section className="in-game">
-          <div>
+        <>
+          <div className="in-game">
             <Token name={pick} />
             <p>You Picked</p>
           </div>
-          <div>
-            <Token name={pick} />
+          <div className="in-game">
+            <Token />
             <p>The house Picked</p>
           </div>
-        </section>
+        </>
       )}
     </TableStyled>
   );
