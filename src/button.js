@@ -14,9 +14,15 @@ const ButtonStyled = styled.div`
   letter-spacing: 2.5px;
   cursor: pointer;
 `;
-
-function Button({ ...props }) {
-  return <ButtonStyled {...props}>Rules</ButtonStyled>;
+export const WhiteButton = styled(ButtonStyled)`
+  /* Creacion un nuevo componente usando los estilos de otro y solo cambiando
+  atributos particulares. De este modo nos ahorramos de crear un archivo con el nuevo estilo */
+  background: white;
+  color: #565468;
+  min-width: 220px;
+`;
+function Button({ children, ...props }) {
+  return <ButtonStyled {...props}>{children}</ButtonStyled>;
 }
 
 export default Button;

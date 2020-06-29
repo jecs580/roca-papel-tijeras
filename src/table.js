@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Token from "./token";
+import { WhiteButton } from "./button";
 const TableStyled = styled.div`
   display: grid;
   grid-template-columns: 130px 130px;
@@ -23,6 +24,9 @@ const TableStyled = styled.div`
     font-size: 0.8em;
     font-weight: 600;
     letter-spacing: 2px;
+  }
+  .results {
+    text-align: center;
   }
   .line {
     display: ${({ playing }) => (!playing ? "block" : "none")};
@@ -57,14 +61,52 @@ const TableStyled = styled.div`
     }
   }
 `;
-
+const elements = ["paper", "scissors", "rock"];
 function Table() {
-  const [playing, setPlaying] = useState(true); // cambiar a falso
-  const [pick, setPick] = useState("paper"); // Cambiar a vacio
+  const [playing, setPlaying] = useState(false); // cambiar a falso
+  const [pick, setPick] = useState(""); // Cambiar a vacio
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
   function onClick(name) {
-    console.log(name);
+    const housePick = elements[getRandomInt(0, 3)];
+    console.log("la casa eligio", housePick);
+    const results = play(housePick, name);
+    console.log(results);
     setPlaying(true);
     setPick(name);
+  }
+  function play(housePick, pick) {
+    if (housePick === pick) {
+      return "draw";
+    }
+    if (pick === "paper") {
+      if (housePick === "scissors") {
+        return "lose";
+      }
+      if (housePick === "rock") {
+        return "win";
+      }
+    }
+    if (pick === "rock") {
+      if (housePick === "paper") {
+        return "lose";
+      }
+      if (housePick === "scissors") {
+        return "win";
+      }
+    }
+    if (pick === "scissors") {
+      if (housePick === "paper") {
+        return "win";
+      }
+      if (housePick === "rock") {
+        return "lose";
+      }
+    }
+  }
+  function handlePlayAgainClick() {
+    setPlaying(false);
   }
   return (
     <TableStyled playing={playing}>
@@ -84,6 +126,10 @@ function Table() {
           <div className="in-game">
             <Token />
             <p>The house Picked</p>
+          </div>
+          <div className="results">
+            <h2>You </h2>
+            <WhiteButton onClick={handlePlayAgainClick}>Play again</WhiteButton>
           </div>
         </>
       )}
