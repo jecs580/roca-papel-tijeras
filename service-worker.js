@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/roca-papel-tijeras/precache-manifest.9833c7a275fa9b7add0b8c6cbae97887.js"
+  "/roca-papel-tijeras/precache-manifest.fb0a4abb8819d971e0b99735673172de.js"
 );
 
 self.addEventListener('message', (event) => {
