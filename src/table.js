@@ -27,6 +27,7 @@ const TableStyled = styled.div`
   }
   .results {
     text-align: center;
+    text-transform: uppercase;
   }
   .line {
     display: ${({ playing }) => (!playing ? "block" : "none")};
@@ -63,18 +64,34 @@ const TableStyled = styled.div`
 `;
 const elements = ["paper", "scissors", "rock"];
 function Table() {
+  const [results, setResults] = useState(""); // cambiar a vacio
+  const [housePick, setHousePick] = useState("default"); // cambiar a default
   const [playing, setPlaying] = useState(false); // cambiar a falso
   const [pick, setPick] = useState(""); // Cambiar a vacio
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
-  function onClick(name) {
-    const housePick = elements[getRandomInt(0, 3)];
-    console.log("la casa eligio", housePick);
-    const results = play(housePick, name);
-    console.log(results);
+  function lanchHousePick() {
+    return new Promise((resolve, reject) => {
+      let pick;
+      const interval = setInterval(() => {
+        pick = elements[getRandomInt(0, 3)];
+        setHousePick(pick);
+      }, 60);
+      setTimeout(() => {
+        clearInterval(interval);
+        resolve(pick);
+      }, 1000);
+    });
+  }
+  async function onClick(name) {
     setPlaying(true);
     setPick(name);
+    const house = await lanchHousePick();
+    // console.log("la casa eligio", house);
+    const results = play(house, name);
+    // console.log(results);
+    setResults(results);
   }
   function play(housePick, pick) {
     if (housePick === pick) {
@@ -124,11 +141,11 @@ function Table() {
             <p>You Picked</p>
           </div>
           <div className="in-game">
-            <Token />
+            <Token name={housePick} />
             <p>The house Picked</p>
           </div>
           <div className="results">
-            <h2>You </h2>
+            <h2>You {results}</h2>
             <WhiteButton onClick={handlePlayAgainClick}>Play again</WhiteButton>
           </div>
         </>
