@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da00ee3ac0f2df67d2027beb1bb24ffd",
+    "revision": "ad5c37b94bc4755c23913af090eeeb15",
     "url": "/roca-papel-tijeras/index.html"
   },
   {
-    "revision": "e448285b96b66493fb76",
+    "revision": "32c904143ee0db579f5b",
     "url": "/roca-papel-tijeras/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "ca6c23602be52d7196fe",
-    "url": "/roca-papel-tijeras/static/js/2.be885279.chunk.js"
+    "revision": "9453f2708a490b13ee4b",
+    "url": "/roca-papel-tijeras/static/js/2.07fa6bbe.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/roca-papel-tijeras/static/js/2.be885279.chunk.js.LICENSE.txt"
+    "url": "/roca-papel-tijeras/static/js/2.07fa6bbe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e448285b96b66493fb76",
-    "url": "/roca-papel-tijeras/static/js/main.4d218c43.chunk.js"
+    "revision": "32c904143ee0db579f5b",
+    "url": "/roca-papel-tijeras/static/js/main.2a90716c.chunk.js"
   },
   {
     "revision": "9efa5e9a88f394c9dfd6",
