@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Token from "./token";
 import { WhiteButton } from "./button";
+import { ScoreContext } from "./App";
 const TableStyled = styled.div`
   display: grid;
   grid-template-columns: 130px 130px;
@@ -28,6 +29,9 @@ const TableStyled = styled.div`
   .results {
     text-align: center;
     text-transform: uppercase;
+    h2 {
+      opacity: ${({ letter }) => letter};
+    }
   }
   .line {
     display: ${({ playing }) => (!playing ? "block" : "none")};
@@ -64,6 +68,8 @@ const TableStyled = styled.div`
 `;
 const elements = ["paper", "scissors", "rock"];
 function Table() {
+  const { score, setScore } = useContext(ScoreContext);
+  const [letter, setLetter] = useState(0);
   const [results, setResults] = useState(""); // cambiar a vacio
   const [housePick, setHousePick] = useState("default"); // cambiar a default
   const [playing, setPlaying] = useState(false); // cambiar a falso
@@ -72,7 +78,7 @@ function Table() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
   function lanchHousePick() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       let pick;
       const interval = setInterval(() => {
         pick = elements[getRandomInt(0, 3)];
@@ -92,6 +98,10 @@ function Table() {
     const results = play(house, name);
     // console.log(results);
     setResults(results);
+    setLetter(1);
+    if (results === "win") {
+      setScore(score + 1);
+    }
   }
   function play(housePick, pick) {
     if (housePick === pick) {
@@ -124,9 +134,10 @@ function Table() {
   }
   function handlePlayAgainClick() {
     setPlaying(false);
+    setLetter(0);
   }
   return (
-    <TableStyled playing={playing}>
+    <TableStyled playing={playing} letter={letter}>
       <span className="line"></span>
       {!playing ? (
         <>
