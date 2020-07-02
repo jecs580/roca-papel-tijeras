@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1f31583bd34e391885afd51f15006c5",
+    "revision": "5f18fb16ff79c51ac023411cf13d13cf",
     "url": "/roca-papel-tijeras/index.html"
   },
   {
-    "revision": "87d21325449e4ea0d4c3",
+    "revision": "7f7bc3d6e7678c78e05c",
     "url": "/roca-papel-tijeras/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/roca-papel-tijeras/static/js/2.07fa6bbe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87d21325449e4ea0d4c3",
-    "url": "/roca-papel-tijeras/static/js/main.426cb91f.chunk.js"
+    "revision": "7f7bc3d6e7678c78e05c",
+    "url": "/roca-papel-tijeras/static/js/main.78dc523f.chunk.js"
   },
   {
     "revision": "9efa5e9a88f394c9dfd6",
