@@ -135,6 +135,7 @@ function Table() {
   function handlePlayAgainClick() {
     setPlaying(false);
     setLetter(0);
+    setResults("");
   }
   return (
     <TableStyled playing={playing} letter={letter}>
@@ -148,11 +149,11 @@ function Table() {
       ) : (
         <>
           <div className="in-game">
-            <Token name={pick} />
+            <Token name={pick} isShadowAnimated={results === "win"} />
             <p>You Picked</p>
           </div>
           <div className="in-game">
-            <Token name={housePick} />
+            <Token name={housePick} isShadowAnimated={results === "lose"} />
             <p>The house Picked</p>
           </div>
           <div className="results">
