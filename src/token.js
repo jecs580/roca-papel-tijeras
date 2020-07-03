@@ -1,5 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const shadow = keyframes`
+  to{
+    box-shadow: 0 0 0 40px rgba(255, 255,255, 0.05),  0 0 0 80px rgba(255, 255,255, 0.03),  0 0 0 120px rgba(255, 255,255, 0.025);
+    transform: rotateY(360deg) scale(1.1);
+  }
+`;
+
 const TokenStyled = styled.div`
   width: 130px;
   height: 125px;
@@ -15,7 +23,9 @@ const TokenStyled = styled.div`
   z-index: 2;
   ${({ isShadowAnimated }) =>
     isShadowAnimated &&
-    "box-shadow: 0 0 0 40px rgba(255, 255,255, 0.05),  0 0 0 80px rgba(255, 255,255, 0.03),  0 0 0 120px rgba(255, 255,255, 0.025);"}
+    "box-shadow: 0 0 0 0px rgba(255, 255,255, 0.05),  0 0 0 0px rgba(255, 255,255, 0.03),  0 0 0 0px rgba(255, 255,255, 0.025);"}
+  animation: ${({ isShadowAnimated }) =>
+    isShadowAnimated ? shadow : ""} 1s forwards;
   /* box-shadow:0 10px 0 -4px ${({ color }) =>
     color.border}, 0 0 0 40px rgba(255, 255,255, 0.05),  0 0 0 80px rgba(255, 255,255, 0.03),  0 0 0 120px rgba(255, 255,255, 0.025); */
   &:active {

@@ -25,12 +25,16 @@ const TableStyled = styled.div`
     font-size: 0.8em;
     font-weight: 600;
     letter-spacing: 2px;
+    user-select: none;
   }
   .results {
     text-align: center;
     text-transform: uppercase;
     h2 {
       opacity: ${({ letter }) => letter};
+      font-size: 52px;
+      user-select: none;
+      margin-bottom: 10px;
     }
   }
   .line {
@@ -158,7 +162,9 @@ function Table() {
           </div>
           <div className="results">
             <h2>You {results}</h2>
-            <WhiteButton onClick={handlePlayAgainClick}>Play again</WhiteButton>
+            <WhiteButton disable={results} onClick={handlePlayAgainClick}>
+              Play again
+            </WhiteButton>
           </div>
         </>
       )}

@@ -4,9 +4,11 @@ import styled from "styled-components";
 const ButtonStyled = styled.div`
   display: inline-flex;
   border: 1px solid white;
+  /* pointer-events: all; */
   border-radius: 0.5em;
   min-width: 128px;
   padding: 0.5em;
+  user-select: none;
   box-sizing: border-box;
   text-transform: uppercase;
   justify-content: center;
@@ -20,9 +22,15 @@ export const WhiteButton = styled(ButtonStyled)`
   background: white;
   color: #565468;
   min-width: 220px;
+
+  ${({ disable }) => (disable ? "pointer-events:all" : "pointer-events:none")}
 `;
-function Button({ children, ...props }) {
-  return <ButtonStyled {...props}>{children}</ButtonStyled>;
+function Button({ disable = false, children, ...props }) {
+  return (
+    <ButtonStyled disable={disable} {...props}>
+      {children}
+    </ButtonStyled>
+  );
 }
 
 export default Button;
