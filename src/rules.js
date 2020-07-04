@@ -27,6 +27,14 @@ const RulesStyled = styled.div`
       margin-top: 2em;
     }
   }
+  @media screen and (min-width: 1024px) {
+    /* text-align: right; */
+    .button {
+      position: fixed;
+      right: 2em;
+      bottom: 2em;
+    }
+  }
 `;
 
 function Rules() {
@@ -48,7 +56,9 @@ function Rules() {
           />
         </div>
       )}
-      <Button onClick={handleToggleClick}>Rules</Button>
+      <Button className="button" onClick={handleToggleClick}>
+        Rules
+      </Button>
     </RulesStyled>
   );
 }

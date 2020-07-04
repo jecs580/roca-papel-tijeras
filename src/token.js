@@ -43,6 +43,17 @@ const TokenStyled = styled.div`
     justify-content: center;
     align-items: center;
   }
+  @media screen and (min-width: 768px){
+    width: 200px;
+    height: 195px;
+    border: 25px solid
+    ${({ color, name }) => (name === "default" ? "transparent" : color.base)};
+    .box{
+      img{
+        width:46%;
+      }
+    }
+  }
 `;
 const colors = {
   paper: {

@@ -20,6 +20,17 @@ const ScoreStyled = styled.div`
     position: relative;
     line-height: 0.9;
   }
+  @media screen and (min-width: 768px) {
+    padding: 22px 35px;
+    margin-right: 8px;
+    small {
+      font-size: 16px;
+      letter-spacing: 3px;
+    }
+    p {
+      font-size: 60px;
+    }
+  }
 `;
 
 function Score() {

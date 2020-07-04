@@ -42,8 +42,9 @@ const TableStyled = styled.div`
     height: 15px;
     background: rgba(0, 0, 0, 0.3);
     position: absolute;
-    left: 60px;
-    right: 60px;
+    width: 187px;
+    /* left: 60px;
+    right: 60px; */
     top: 55px;
 
     &:before {
@@ -67,6 +68,14 @@ const TableStyled = styled.div`
       /* top: 55px; */
       transform: rotate(296deg);
       transform-origin: right top;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    /* gap:30px, 140px; */
+    .line {
+      width: 300px;
     }
   }
 `;

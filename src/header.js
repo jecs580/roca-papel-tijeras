@@ -10,10 +10,20 @@ const HeaderStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   h1 {
+    margin: 0;
     font-size: 21px;
     line-height: 16px;
     font-weight: 700;
     text-transform: uppercase;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 15px;
+    border-radius: 1.2em;
+    h1 {
+      padding: 15px;
+      font-size: 40px;
+      line-height: 0.78;
+    }
   }
 `;
 

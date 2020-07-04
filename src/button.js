@@ -15,6 +15,10 @@ const ButtonStyled = styled.div`
   font-size: 1.2em;
   letter-spacing: 2.5px;
   cursor: pointer;
+  &:hover {
+    background: white;
+    color: #565468;
+  }
 `;
 export const WhiteButton = styled(ButtonStyled)`
   /* Creacion un nuevo componente usando los estilos de otro y solo cambiando
