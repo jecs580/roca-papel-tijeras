@@ -4,7 +4,12 @@ import styled, { keyframes } from "styled-components";
 const shadow = keyframes`
   to{
     box-shadow: 0 0 0 40px rgba(255, 255,255, 0.05),  0 0 0 80px rgba(255, 255,255, 0.03),  0 0 0 120px rgba(255, 255,255, 0.025);
-    transform: rotateY(360deg) scale(1.1);
+    /* transform: rotateY(360deg) scale(1.1); */
+  }
+`;
+const box = keyframes`
+to{
+  transform: rotateY(360deg);
   }
 `;
 
@@ -25,7 +30,9 @@ const TokenStyled = styled.div`
     isShadowAnimated &&
     "box-shadow: 0 0 0 0px rgba(255, 255,255, 0.05),  0 0 0 0px rgba(255, 255,255, 0.03),  0 0 0 0px rgba(255, 255,255, 0.025);"}
   animation: ${({ isShadowAnimated }) =>
-    isShadowAnimated ? shadow : ""} 1s forwards;
+    isShadowAnimated
+      ? shadow
+      : ""} 1s forwards;  /* Formards conserva la ultima animacion.*/
   /* box-shadow:0 10px 0 -4px ${({ color }) =>
     color.border}, 0 0 0 40px rgba(255, 255,255, 0.05),  0 0 0 80px rgba(255, 255,255, 0.03),  0 0 0 120px rgba(255, 255,255, 0.025); */
   &:active {
@@ -42,6 +49,9 @@ const TokenStyled = styled.div`
     align-self: stretch;
     justify-content: center;
     align-items: center;
+    img{
+      animation:1s ${({ isShadowAnimated }) => (isShadowAnimated ? box : "")};
+    }
   }
   @media screen and (min-width: 768px){
     width: 200px;

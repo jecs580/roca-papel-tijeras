@@ -4,6 +4,17 @@ import Button from "./button";
 
 const RulesStyled = styled.div`
   text-align: center;
+  &:before {
+    content: "";
+    display: ${({ visible }) => (visible ? "block" : "none")};
+    top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+  }
   .rules-overlay {
     background: white;
     position: fixed;
@@ -11,7 +22,7 @@ const RulesStyled = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     /* min-height: 100vh; */
     justify-content: space-around;
@@ -53,18 +64,19 @@ const RulesStyled = styled.div`
     .close-button {
       position: absolute;
       right: 2em;
+      cursor: pointer;
       top: 0.4em;
     }
   }
 `;
 
 function Rules() {
-  const [visible, setVisible] = useState(true); //Sirve como opereador ternario
+  const [visible, setVisible] = useState(false); //Sirve como opereador ternario
   function handleToggleClick() {
     setVisible(!visible);
   }
   return (
-    <RulesStyled>
+    <RulesStyled visible={visible}>
       {visible && (
         <div className="rules-overlay">
           <h2>Rules</h2>
