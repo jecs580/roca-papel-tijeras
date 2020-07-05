@@ -13,7 +13,7 @@ const RulesStyled = styled.div`
     bottom: 0;
     z-index: 2;
     display: flex;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
@@ -27,18 +27,39 @@ const RulesStyled = styled.div`
       margin-top: 2em;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     /* text-align: right; */
     .button {
       position: fixed;
       right: 2em;
       bottom: 2em;
     }
+    .rules-overlay {
+      padding: 2em;
+      padding-top: 0em;
+      width: 400px;
+      margin: auto;
+      box-sizing: border-box;
+      top: 0;
+      border-radius: 10px;
+      bottom: initial;
+      transform: translateY(50%);
+    }
+    h2 {
+      align-self: flex-start;
+      font-size: 32px;
+      margin-bottom: 1.2em !important;
+    }
+    .close-button {
+      position: absolute;
+      right: 2em;
+      top: 0.4em;
+    }
   }
 `;
 
 function Rules() {
-  const [visible, setVisible] = useState(false); //Sirve como opereador ternario
+  const [visible, setVisible] = useState(true); //Sirve como opereador ternario
   function handleToggleClick() {
     setVisible(!visible);
   }
