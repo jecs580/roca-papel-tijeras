@@ -10,11 +10,6 @@ const TableStyled = styled.div`
   justify-items: center;
   grid-gap: 30px 50px; /* [Distancia vertical distancia horizontal]*/
   position: relative;
-
-  /* background: url("./images/bg-triangle.svg") no-repeat center; */
-  /* background-size: cover; */
-  /* background-size: 85%; */
-  /* background-position-y: 50px; */
   margin: 2em 0;
   & div:nth-of-type(3) {
     grid-column: span 2; /*Especificamos que el tercer hijo ocupe dos espacios de la grilla*/
@@ -70,12 +65,39 @@ const TableStyled = styled.div`
       transform-origin: right top;
     }
   }
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 200px 200px;
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 300px 300px;
+    ${({ playing }) =>
+      playing && "grid-template-columns: 300px 100px 100px 300px;"};
     /* gap:30px, 140px; */
     .line {
       width: 300px;
+    }
+    .in-game {
+      font-size: 1.2em;
+      display: flex;
+      flex-direction: column;
+      p {
+      }
+      > div {
+        order: 2;
+      }
+      > p {
+        order: 1;
+        margin-bottom: 2em;
+      }
+    }
+    & div:nth-of-type(3) {
+      ${({ playing }) => playing && "grid-column: 2 / 4; grid-row: 1;"};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .results {
+      h2 {
+        margin-top: 2em;
+      }
     }
   }
 `;
@@ -162,11 +184,19 @@ function Table() {
       ) : (
         <>
           <div className="in-game">
-            <Token name={pick} isShadowAnimated={results === "win"} />
+            <Token
+              playing={playing}
+              name={pick}
+              isShadowAnimated={results === "win"}
+            />
             <p>You Picked</p>
           </div>
           <div className="in-game">
-            <Token name={housePick} isShadowAnimated={results === "lose"} />
+            <Token
+              playing={playing}
+              name={housePick}
+              isShadowAnimated={results === "lose"}
+            />
             <p>The house Picked</p>
           </div>
           <div className="results">

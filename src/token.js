@@ -56,13 +56,15 @@ const TokenStyled = styled.div`
   @media screen and (min-width: 768px){
     width: 200px;
     height: 195px;
-    border: 25px solid
+    border: 1.5em solid
     ${({ color, name }) => (name === "default" ? "transparent" : color.base)};
     .box{
       img{
         width:46%;
       }
     }
+    ${({ playing }) =>
+      playing ? "width: 300px; height: 295px;" : "width: 200px; height: 195px"};
   }
 `;
 const colors = {
@@ -83,7 +85,12 @@ const colors = {
     border: "transparent",
   },
 };
-function Token({ name = "default", onClick, isShadowAnimated = false }) {
+function Token({
+  name = "default",
+  onClick,
+  isShadowAnimated = false,
+  playing,
+}) {
   function handleClick() {
     if (onClick) {
       onClick(name);
@@ -96,6 +103,7 @@ function Token({ name = "default", onClick, isShadowAnimated = false }) {
       onClick={handleClick}
       name={name}
       isShadowAnimated={isShadowAnimated}
+      playing={playing}
     >
       <div className="box">
         <img src={`./images/icon-${name}.svg`} alt="" />
