@@ -67,8 +67,8 @@ const TableStyled = styled.div`
   }
   @media screen and (min-width: 1024px) {
     grid-template-columns: 300px 300px;
-    ${({ playing }) =>
-      playing && "grid-template-columns: 300px 100px 100px 300px;"};
+    ${({ playing, resultado }) =>
+      (playing && resultado) && "grid-template-columns: 300px 100px 100px 300px;"};
     /* gap:30px, 140px; */
     .line {
       width: 300px;
@@ -88,7 +88,7 @@ const TableStyled = styled.div`
       }
     }
     & div:nth-of-type(3) {
-      ${({ playing }) => playing && "grid-column: 2 / 4; grid-row: 1;"};
+      ${({ playing, resultado }) => (playing && resultado) && "grid-column: 2 / 4; grid-row: 1;"};
       display: flex;
       justify-content: center;
       align-items: center;
@@ -173,7 +173,7 @@ function Table() {
     setResults("");
   }
   return (
-    <TableStyled playing={playing} letter={letter}>
+    <TableStyled playing={playing} letter={letter} resultado={(results !=="")}>
       <span className="line"></span>
       {!playing ? (
         <>
@@ -200,10 +200,17 @@ function Table() {
             <p>The house Picked</p>
           </div>
           <div className="results">
-            <h2>You {results}</h2>
-            <WhiteButton disable={results} onClick={handlePlayAgainClick}>
-              Play again
-            </WhiteButton>
+            {
+              results &&(
+                <>
+                  <h2>You {results}</h2>
+                  <WhiteButton onClick={handlePlayAgainClick}>
+                    Play again
+                  </WhiteButton>
+                </>
+              )
+            }
+            
           </div>
         </>
       )}

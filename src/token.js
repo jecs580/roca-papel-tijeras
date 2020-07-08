@@ -53,7 +53,7 @@ const TokenStyled = styled.div`
       animation:1s ${({ isShadowAnimated }) => (isShadowAnimated ? box : "")};
     }
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 1024px){
     width: 200px;
     height: 195px;
     border: 1.5em solid

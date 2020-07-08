@@ -16,7 +16,7 @@ const HeaderStyled = styled.div`
     font-weight: 700;
     text-transform: uppercase;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     padding: 15px;
     border-radius: 1.2em;
     h1 {

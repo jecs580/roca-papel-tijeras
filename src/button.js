@@ -4,7 +4,6 @@ import styled from "styled-components";
 const ButtonStyled = styled.div`
   display: inline-flex;
   border: 1px solid white;
-  /* pointer-events: all; */
   border-radius: 0.5em;
   min-width: 128px;
   padding: 0.5em;
@@ -27,11 +26,11 @@ export const WhiteButton = styled(ButtonStyled)`
   color: #565468;
   min-width: 220px;
 
-  ${({ disable }) => (disable ? "pointer-events:all" : "pointer-events:none")}
+  /* ${({ disable }) => (disable ? "pointer-events:all" : "pointer-events:none")} pointer-event:none --> Disablea el elemento */
 `;
-function Button({ disable = false, children, ...props }) {
+function Button({ children, ...props }) {
   return (
-    <ButtonStyled disable={disable} {...props}>
+    <ButtonStyled  {...props}>
       {children}
     </ButtonStyled>
   );
