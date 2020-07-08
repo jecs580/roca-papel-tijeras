@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/roca-papel-tijeras/static/css/main.5f361e03.chunk.css",
-    "main.js": "/roca-papel-tijeras/static/js/main.82c29f96.chunk.js",
-    "main.js.map": "/roca-papel-tijeras/static/js/main.82c29f96.chunk.js.map",
+    "main.js": "/roca-papel-tijeras/static/js/main.e55fa908.chunk.js",
+    "main.js.map": "/roca-papel-tijeras/static/js/main.e55fa908.chunk.js.map",
     "runtime-main.js": "/roca-papel-tijeras/static/js/runtime-main.830d9d91.js",
     "runtime-main.js.map": "/roca-papel-tijeras/static/js/runtime-main.830d9d91.js.map",
     "static/js/2.8d8620ce.chunk.js": "/roca-papel-tijeras/static/js/2.8d8620ce.chunk.js",
     "static/js/2.8d8620ce.chunk.js.map": "/roca-papel-tijeras/static/js/2.8d8620ce.chunk.js.map",
     "index.html": "/roca-papel-tijeras/index.html",
-    "precache-manifest.21384754901cc4f054f03a50071c14ed.js": "/roca-papel-tijeras/precache-manifest.21384754901cc4f054f03a50071c14ed.js",
+    "precache-manifest.621db878cdb7545bc5e90b98ba80c271.js": "/roca-papel-tijeras/precache-manifest.621db878cdb7545bc5e90b98ba80c271.js",
     "service-worker.js": "/roca-papel-tijeras/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/roca-papel-tijeras/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.8d8620ce.chunk.js.LICENSE.txt": "/roca-papel-tijeras/static/js/2.8d8620ce.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.830d9d91.js",
     "static/js/2.8d8620ce.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.82c29f96.chunk.js"
+    "static/js/main.e55fa908.chunk.js"
   ]
 }
